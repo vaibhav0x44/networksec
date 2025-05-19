@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Network Security Exam Answers (1-90)</title>
+    <style>
+    body {
+        background-color: #000;
+        color: #eee;
+    }
+    .question {
+        color: #ff4d4d;
+        font-weight: bold;
+    }
+    .answer {
+        color: #00ffff;
+    }
+    .section {
+        color: #ff66ff;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .memory-tip {
+        background-color: #111;
+        padding: 5px;
+        border-left: 3px solid yellow;
+        margin: 10px 0;
+        color: #fff;
+    }
+    code {
+        background-color: #222;
+        padding: 2px 5px;
+        color: #0ff;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+        color: #ddd;
+    }
+    th, td {
+        border: 1px solid #555;
+        padding: 8px;
+        text-align: left;
+    }
+    .comparison {
+        margin: 15px 0;
+    }
+</style>
+</head>
+<body>
+
+<div class="section">Basic Definitions (Q1-30)</div>
+
+<p class="question">1. Define network security.</p>
+<p class="answer">
+    <strong>Network security</strong> refers to the policies, tools, and practices designed to protect network infrastructure, data, and services from unauthorized access, misuse, malfunction, modification, destruction, or improper disclosure.
+    <ul>
+        <li><strong>Key objectives:</strong> Confidentiality, Integrity, Availability (CIA triad)</li>
+        <li><strong>Implementation examples:</strong> Firewalls, encryption, intrusion detection systems</li>
+    </ul>
+    <div class="memory-tip">Memory Tip: Think of network security as a "digital immune system" protecting against cyber threats.</div>
+</p>
+
+<p class="question">2. What are the three main goals of network security?</p>
+<p class="answer">
+    The <strong>CIA triad</strong> forms the core objectives:
+    <ol>
+        <li><strong>Confidentiality</strong> - Ensuring information is accessible only to authorized entities (e.g., encryption)</li>
+        <li><strong>Integrity</strong> - Maintaining accuracy and consistency of data (e.g., hashing)</li>
+        <li><strong>Availability</strong> - Guaranteeing reliable access to systems/resources (e.g., DDoS protection)</li>
+    </ol>
+    <div class="memory-tip">Memory Tip: "CIA" - Confidentiality keeps secrets, Integrity prevents tampering, Availability keeps services running.</div>
+</p>
+
+<p class="question">3. Define authentication and authorization.</p>
+<p class="answer">
+    <div class="comparison">
+        <table>
+            <tr>
+                <th width="30%">Authentication</th>
+                <th width="30%">Authorization</th>
+                <th>Examples</th>
+            </tr>
+            <tr>
+                <td>Verifies identity ("Are you who you claim to be?")</td>
+                <td>Determines access rights ("What are you allowed to do?")</td>
+                <td>Username/password → File permissions</td>
+            </tr>
+            <tr>
+                <td>Methods: Passwords, biometrics, tokens</td>
+                <td>Methods: ACLs, RBAC, policies</td>
+                <td>Fingerprint scan → Admin privileges</td>
+            </tr>
+        </table>
+    </div>
+    <div class="memory-tip">Memory Tip: Authentication = ID check at door, Authorization = what rooms you can enter.</div>
+</p>
+
+<p class="question">4. What is confidentiality in network security?</p>
+<p class="answer">
+    <strong>Confidentiality</strong> ensures sensitive information is accessible only to authorized parties.
+    <ul>
+        <li><strong>Implementation techniques:</strong>
+            <ul>
+                <li>Encryption (AES, RSA)</li>
+                <li>Access controls (RBAC)</li>
+                <li>Data masking</li>
+            </ul>
+        </li>
+        <li><strong>Example:</strong> HTTPS encrypts web communications</li>
+    </ul>
+</p>
+
+<p class="question">5. What do you mean by data integrity?</p>
+<p class="answer">
+    <strong>Data integrity</strong> guarantees information remains unaltered from its source to destination.
+    <ul>
+        <li><strong>Protection methods:</strong>
+            <ul>
+                <li>Hash functions (SHA-256)</li>
+                <li>Digital signatures</li>
+                <li>Checksums</li>
+            </ul>
+        </li>
+        <li><strong>Example:</strong> File downloads with MD5 verification</li>
+    </ul>
+    <div class="memory-tip">Memory Tip: Integrity = "data fingerprint" that changes if tampered with.</div>
+</p>
+
+<p class="question">6. Define anonymity in the context of network security.</p>
+<p class="answer">
+    <strong>Anonymity</strong> ensures users can perform actions without revealing their identity.
+    <ul>
+        <li><strong>Techniques:</strong> Tor networks, proxy chains, cryptocurrency</li>
+        <li><strong>Applications:</strong> Whistleblowing, privacy protection</li>
+        <li><strong>Challenge:</strong> Balancing anonymity with accountability</li>
+    </ul>
+</p>
+
+<p class="question">7. What is a network security model?</p>
+<p class="answer">
+    A <strong>network security model</strong> is a formal framework describing security services and mechanisms.
+    <ul>
+        <li><strong>Components:</strong>
+            <ul>
+                <li>Security policies</li>
+                <li>Threat assumptions</li>
+                <li>Defense mechanisms</li>
+            </ul>
+        </li>
+        <li><strong>Example:</strong> OSI Security Architecture (X.800)</li>
+    </ul>
+</p>
+
+<p class="question">8. List any two network security threats.</p>
+<p class="answer">
+    Common threats include:
+    <ol>
+        <li><strong>Malware</strong> (viruses, worms, ransomware)</li>
+        <li><strong>Phishing</strong> (social engineering attacks)</li>
+        <li><strong>DDoS attacks</strong> (flooding services with traffic)</li>
+    </ol>
+</p>
+
+<p class="question">9. What is the difference between SSL and TLS?</p>
+<p class="answer">
+    <div class="comparison">
+        <table>
+            <tr>
+                <th width="30%">SSL (Secure Sockets Layer)</th>
+                <th width="30%">TLS (Transport Layer Security)</th>
+            </tr>
+            <tr>
+                <td>Older protocol (SSL 3.0 deprecated in 2015)</td>
+                <td>Modern replacement (TLS 1.3 current standard)</td>
+            </tr>
+            <tr>
+                <td>Vulnerable to POODLE attack</td>
+                <td>Improved security algorithms</td>
+            </tr>
+            <tr>
+                <td>Uses MAC for integrity</td>
+                <td>Uses HMAC for integrity</td>
+            </tr>
+        </table>
+    </div>
+    <div class="memory-tip">Memory Tip: TLS is the "upgraded SSL" - think "SSL → TLS" as "HTTP → HTTPS".</div>
+</p>
+
+<p class="question">10. Define Public Key Infrastructure (PKI).</p>
+<p class="answer">
+    <strong>PKI</strong> is a framework for managing digital certificates and public-key encryption.
+    <ul>
+        <li><strong>Components:</strong>
+            <ul>
+                <li>Certificate Authorities (CAs)</li>
+                <li>Registration Authorities</li>
+                <li>Certificate databases</li>
+            </ul>
+        </li>
+        <li><strong>Example:</strong> Verifying website authenticity via HTTPS</li>
+    </ul>
+</p>
+
+<p class="question">11. What is a digital signature?</p>
+<p class="answer">
+    A <strong>digital signature</strong> is a cryptographic technique that:
+    <ul>
+        <li>Verifies authenticity of digital messages/documents</li>
+        <li>Provides non-repudiation (sender cannot deny sending)</li>
+        <li>Created using sender's private key, verified with public key</li>
+        <li><strong>Example:</strong> Signing PDF documents with Adobe Certificate</li>
+    </ul>
+    <div class="memory-tip">Memory Tip: Digital signature = electronic wax seal.</div>
+</p>
+
+<p class="question">12. Name two types of firewalls.</p>
+<p class="answer">
+    Common firewall types:
+    <ol>
+        <li><strong>Packet-filtering firewalls</strong> (examine packet headers)</li>
+        <li><strong>Application-level gateways</strong> (proxy firewalls)</li>
+        <li><strong>Stateful inspection firewalls</strong> (track connection state)</li>
+    </ol>
+</p>
+
+<p class="question">13. What is the role of a firewall in network security?</p>
+<p class="answer">
+    <strong>Firewalls</strong> act as network traffic filters:
+    <ul>
+        <li><strong>Primary functions:</strong>
+            <ul>
+                <li>Block unauthorized access</li>
+                <li>Allow legitimate traffic</li>
+                <li>Log network activity</li>
+            </ul>
+        </li>
+        <li><strong>Deployment:</strong> Between trusted/untrusted networks</li>
+    </ul>
+</p>
+
+<p class="question">14. Define intrusion detection system (IDS).</p>
+<p class="answer">
+    An <strong>IDS</strong> monitors networks/systems for malicious activity.
+    <ul>
+        <li><strong>Types:</strong>
+            <ul>
+                <li>Network-based (NIDS)</li>
+                <li>Host-based (HIDS)</li>
+            </ul>
+        </li>
+        <li><strong>Detection methods:</strong> Signature-based, anomaly-based</li>
+    </ul>
+</p>
+
+<p class="question">15. What is a packet filtering firewall?</p>
+<p class="answer">
+    <strong>Packet-filtering firewalls</strong>:
+    <ul>
+        <li>Examine packet headers (IP addresses, ports, protocols)</li>
+        <li>Make allow/deny decisions based on rules</li>
+        <li><strong>Advantage:</strong> Fast processing</li>
+        <li><strong>Limitation:</strong> Cannot inspect payload content</li>
+    </ul>
+</p>
+
+<p class="question">16. Define a Virtual Private Network (VPN).</p>
+<p class="answer">
+    A <strong>VPN</strong> creates secure, encrypted connections over public networks.
+    <ul>
+        <li><strong>Uses:</strong>
+            <ul>
+                <li>Remote access security</li>
+                <li>Bypassing geo-restrictions</li>
+                <li>Anonymous browsing</li>
+            </ul>
+        </li>
+        <li><strong>Protocols:</strong> IPsec, OpenVPN, WireGuard</li>
+    </ul>
+</p>
+
+<p class="question">17. What is Kerberos?</p>
+<p class="answer">
+    <strong>Kerberos</strong> is a network authentication protocol:
+    <ul>
+        <li>Uses ticket-granting system</li>
+        <li>Prevents eavesdropping/replay attacks</li>
+        <li>Common in Windows Active Directory</li>
+        <li><strong>Components:</strong> KDC, TGS, Client, Service</li>
+    </ul>
+</p>
+
+<p class="question">18. What is the function of X.509 certificates?</p>
+<p class="answer">
+    <strong>X.509 certificates</strong>:
+    <ul>
+        <li>Bind identities to public keys</li>
+        <li>Used in SSL/TLS, S/MIME</li>
+        <li>Contain: Owner info, public key, CA signature</li>
+        <li><strong>Example:</strong> Website SSL certificates</li>
+    </ul>
+</p>
+
+<p class="question">19. What is PGP (Pretty Good Privacy)?</p>
+<p class="answer">
+    <strong>PGP</strong> is an encryption program for:
+    <ul>
+        <li>Email/file encryption</li>
+        <li>Digital signatures</li>
+        <li>Uses hybrid cryptosystem (RSA + AES)</li>
+        <li><strong>Key management:</strong> Web of trust model</li>
+    </ul>
+</p>
+
+<p class="question">20. Define S/MIME.</p>
+<p class="answer">
+    <strong>S/MIME</strong> (Secure/Multipurpose Internet Mail Extensions):
+    <ul>
+        <li>Standard for encrypted/signed email</li>
+        <li>Uses X.509 certificates</li>
+        <li>Common in enterprise email systems</li>
+    </ul>
+</p>
+
+<p class="question">21. What is IPsec?</p>
+<p class="answer">
+    <strong>IPsec</strong> (Internet Protocol Security):
+    <ul>
+        <li>Suite of protocols for secure IP communications</li>
+        <li>Provides: Confidentiality, integrity, authentication</li>
+        <li>Modes: Transport (host-to-host), Tunnel (network-to-network)</li>
+    </ul>
+</p>
+
+<p class="question">22. What are the two major protocols used in IPsec?</p>
+<p class="answer">
+    IPsec core protocols:
+    <ol>
+        <li><strong>AH</strong> (Authentication Header) - integrity/authentication</li>
+        <li><strong>ESP</strong> (Encapsulating Security Payload) - confidentiality/integrity</li>
+    </ol>
+</p>
+
+<p class="question">23. What is the SNMP architecture?</p>
+<p class="answer">
+    <strong>SNMP</strong> (Simple Network Management Protocol) architecture:
+    <ul>
+        <li><strong>Components:</strong>
+            <ul>
+                <li>Managed devices</li>
+                <li>Agents</li>
+                <li>NMS (Network Management System)</li>
+            </ul>
+        </li>
+        <li><strong>Versions:</strong> SNMPv1/v2c (insecure), SNMPv3 (secure)</li>
+    </ul>
+</p>
+
+<p class="question">24. Define intrusion detection.</p>
+<p class="answer">
+    <strong>Intrusion detection</strong> is the process of:
+    <ul>
+        <li>Monitoring systems/networks for policy violations</li>
+        <li>Identifying malicious activity patterns</li>
+        <li>Generating alerts for suspicious events</li>
+    </ul>
+</p>
+
+<p class="question">25. What is the role of honeypots in network security?</p>
+<p class="answer">
+    <strong>Honeypots</strong> are decoy systems that:
+    <ul>
+        <li>Attract attackers away from real systems</li>
+        <li>Gather intelligence about attack methods</li>
+        <li>Types: Low-interaction (emulated), high-interaction (real systems)</li>
+    </ul>
+</p>
+
+<p class="question">26. Define distributed intrusion detection.</p>
+<p class="answer">
+    <strong>Distributed IDS</strong> (DIDS):
+    <ul>
+        <li>Monitors multiple network segments</li>
+        <li>Correlates events across systems</li>
+        <li>Examples: Prelude, OSSEC</li>
+    </ul>
+</p>
+
+<p class="question">27. What is the importance of network-based intrusion detection?</p>
+<p class="answer">
+    <strong>Network-based IDS</strong> (NIDS):
+    <ul>
+        <li>Monitors entire network segments</li>
+        <li>Detects attacks missed by host-based systems</li>
+        <li>Examples: Snort, Suricata</li>
+    </ul>
+</p>
+
+<p class="question">28. What is an intrusion detection exchange format?</p>
+<p class="answer">
+    <strong>IDMEF</strong> (Intrusion Detection Message Exchange Format):
+    <ul>
+        <li>Standardized alert format (RFC 4765)</li>
+        <li>Enables interoperability between security tools</li>
+        <li>Uses XML schema</li>
+    </ul>
+</p>
+
+<p class="question">29. Define host-based intrusion detection.</p>
+<p class="answer">
+    <strong>Host-based IDS</strong> (HIDS):
+    <ul>
+        <li>Monitors individual host systems</li>
+        <li>Tracks file changes, log files, processes</li>
+        <li>Examples: Tripwire, OSSEC</li>
+    </ul>
+</p>
+
+<p class="question">30. What is an adaptive intrusion detection system?</p>
+<p class="answer">
+    <strong>Adaptive IDS</strong>:
+    <ul>
+        <li>Learns normal behavior patterns</li>
+        <li>Adjusts detection thresholds dynamically</li>
+        <li>Uses machine learning techniques</li>
+    </ul>
+</p>
+
+<div class="section">Explanatory Questions (Q31-50)</div>
+
+<p class="question">31. Explain the key differences between authentication and authorization.</p>
+<p class="answer">
+    <div class="comparison">
+        <table>
+            <tr>
+                <th width="25%">Aspect</th>
+                <th width="35%">Authentication</th>
+                <th>Authorization</th>
+            </tr>
+            <tr>
+                <td><strong>Purpose</strong></td>
+                <td>Verify identity</td>
+                <td>Determine access rights</td>
+            </tr>
+            <tr>
+                <td><strong>Sequence</strong></td>
+                <td>First step ("Who are you?")</td>
+                <td>Follows authentication ("What can you do?")</td>
+            </tr>
+            <tr>
+                <td><strong>Methods</strong></td>
+                <td>Passwords, biometrics, 2FA</td>
+                <td>ACLs, RBAC, ABAC policies</td>
+            </tr>
+            <tr>
+                <td><strong>Example</strong></td>
+                <td>Login with username/password</td>
+                <td>Admin vs. read-only file permissions</td>
+            </tr>
+        </table>
+    </div>
+    <div class="memory-tip">Memory Tip: Authentication = Employee ID card, Authorization = Which offices the card can open.</div>
+</p>
+
+<p class="question">32. Differentiate between symmetric and asymmetric encryption.</p>
+<p class="answer">
+    <div class="comparison">
+        <table>
+            <tr>
+                <th width="25%">Feature</th>
+                <th width="35%">Symmetric Encryption</th>
+                <th>Asymmetric Encryption</th>
+            </tr>
+            <tr>
+                <td><strong>Keys</strong></td>
+                <td>Single shared key</td>
+                <td>Public/private key pair</td>
+            </tr>
+            <tr>
+                <td><strong>Speed</strong></td>
+                <td>Faster (suitable for bulk data)</td>
+                <td>Slower (used for key exchange)</td>
+            </tr>
+            <tr>
+                <td><strong>Key Distribution</strong></td>
+                <td>Secure channel required</td>
+                <td>Public keys freely distributed</td>
+            </tr>
+            <tr>
+                <td><strong>Examples</strong></td>
+                <td>AES (128/256-bit), DES</td>
+                <td>RSA (2048-bit), ECC</td>
+            </tr>
+        </table>
+    </div>
+    <div class="memory-tip">Memory Tip: Symmetric = 1 key (like a diary lock), Asymmetric = 2 keys (like mailbox - public=slot, private=key).</div>
+</p>
+
+<p class="question">33. Explain how SSL/TLS ensures secure communication over the internet.</p>
+<p class="answer">
+    SSL/TLS provides security through:
+    <ol>
+        <li><strong>Handshake Protocol</strong>:
+            <ul>
+                <li>Negotiates cipher suite</li>
+                <li>Authenticates server (optionally client)</li>
+                <li>Establishes shared secret via asymmetric crypto</li>
+            </ul>
+        </li>
+        <li><strong>Record Protocol</strong>:
+            <ul>
+                <li>Encrypts data with symmetric keys</li>
+                <li>Provides message integrity via HMAC</li>
+            </ul>
+        </li>
+        <li><strong>Key Exchange</strong>:
+            <ul>
+                <li>RSA (legacy) or ECDHE (forward secrecy)</li>
+            </ul>
+        </li>
+    </ol>
+    <div class="memory-tip">Memory Tip: SSL/TLS = Digital "handshake" (agree on keys) + "locked briefcase" (encrypt data).</div>
+</p>
+
+<p class="question">34. Describe the working principle of a digital signature.</p>
+<p class="answer">
+    Digital signatures work via:
+    <ol>
+        <li><strong>Signing Process</strong>:
+            <ul>
+                <li>Sender hashes the message (SHA-256)</li>
+                <li>Encrypts hash with private key</li>
+                <li>Appends encrypted hash to message</li>
+            </ul>
+        </li>
+        <li><strong>Verification Process</strong>:
+            <ul>
+                <li>Recipient decrypts signature with sender's public key</li>
+                <li>Computes fresh hash of received message</li>
+                <li>Compares two hashes for match</li>
+            </ul>
+        </li>
+    </ol>
+    <div class="memory-tip">Memory Tip: Digital signature = Electronic wax seal (unique to sender, verifiable by all).</div>
+</p>
+
+<p class="question">35. Discuss the various types of network security threats.</p>
+<p class="answer">
+    <table>
+        <tr>
+            <th width="20%">Threat Type</th>
+            <th width="30%">Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><strong>Passive</strong></td>
+            <td>Eavesdropping without alteration</td>
+            <td>Packet sniffing</td>
+        </tr>
+        <tr>
+            <td><strong>Active</strong></td>
+            <td>Direct interaction/alteration</td>
+            <td>MITM attacks</td>
+        </tr>
+        <tr>
+            <td><strong>Insider</strong></td>
+            <td>Authorized users misusing access</td>
+            <td>Data theft by employees</td>
+        </tr>
+        <tr>
+            <td><strong>Distributed</strong></td>
+            <td>Coordinated multi-source attacks</td>
+            <td>DDoS botnets</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">36. Compare packet filtering and application-level firewalls.</p>
+<p class="answer">
+    <div class="comparison">
+        <table>
+            <tr>
+                <th width="25%">Feature</th>
+                <th width="35%">Packet Filtering</th>
+                <th>Application-Level</th>
+            </tr>
+            <tr>
+                <td><strong>OSI Layer</strong></td>
+                <td>Layer 3/4 (Network/Transport)</td>
+                <td>Layer 7 (Application)</td>
+            </tr>
+            <tr>
+                <td><strong>Inspection</strong></td>
+                <td>Header only (IP/ports)</td>
+                <td>Full payload content</td>
+            </tr>
+            <tr>
+                <td><strong>Performance</strong></td>
+                <td>Faster</td>
+                <td>Slower (deep inspection)</td>
+            </tr>
+            <tr>
+                <td><strong>Protection</strong></td>
+                <td>Basic IP spoofing prevention</td>
+                <td>SQL injection/XSS blocking</td>
+            </tr>
+        </table>
+    </div>
+</p>
+
+<p class="question">37. Explain the role of firewalls in preventing cyber threats.</p>
+<p class="answer">
+    Firewalls act as:
+    <ul>
+        <li><strong>Traffic Police</strong>:
+            <ul>
+                <li>Block unauthorized access (default-deny policy)</li>
+                <li>Allow legitimate traffic (whitelisting)</li>
+            </ul>
+        </li>
+        <li><strong>Threat Mitigator</strong>:
+            <ul>
+                <li>Prevent port scanning</li>
+                <li>Stop known attack patterns</li>
+            </ul>
+        </li>
+        <li><strong>Security Auditor</strong>:
+            <ul>
+                <li>Log all traffic attempts</li>
+                <li>Generate intrusion alerts</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">38. Describe the features of an Intrusion Detection and Prevention System (IDPS).</p>
+<p class="answer">
+    IDPS capabilities include:
+    <ul>
+        <li><strong>Detection Methods</strong>:
+            <ul>
+                <li>Signature-based (known attacks)</li>
+                <li>Anomaly-based (behavior deviations)</li>
+            </ul>
+        </li>
+        <li><strong>Response Actions</strong>:
+            <ul>
+                <li>Alerts (IDS mode)</li>
+                <li>Automatic blocking (IPS mode)</li>
+            </ul>
+        </li>
+        <li><strong>Deployment Options</strong>:
+            <ul>
+                <li>Network-based (NIDPS)</li>
+                <li>Host-based (HIDPS)</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">39. Explain how a VPN enhances security in a network.</p>
+<p class="answer">
+    VPN security mechanisms:
+    <ol>
+        <li><strong>Confidentiality</strong>:
+            <ul>
+                <li>Encrypts all traffic (AES-256 common)</li>
+                <li>Prevents eavesdropping on public Wi-Fi</li>
+            </ul>
+        </li>
+        <li><strong>Integrity</strong>:
+            <ul>
+                <li>HMAC verifies packet integrity</li>
+            </ul>
+        </li>
+        <li><strong>Authentication</strong>:
+            <ul>
+                <li>Client/server mutual authentication</li>
+                <li>PSK or certificate-based</li>
+            </ul>
+        </li>
+    </ol>
+    <div class="memory-tip">Memory Tip: VPN = Secure "tunnel" through the internet jungle.</div>
+</p>
+
+<p class="question">40. Discuss the advantages and limitations of Kerberos authentication.</p>
+<p class="answer">
+    <table>
+        <tr>
+            <th width="25%">Advantages</th>
+            <th width="25%">Limitations</th>
+        </tr>
+        <tr>
+            <td>Mutual authentication</td>
+            <td>Single point of failure (KDC)</td>
+        </tr>
+        <tr>
+            <td>Time-limited tickets prevent replay</td>
+            <td>Requires time synchronization</td>
+        </tr>
+        <tr>
+            <td>No password transmission</td>
+            <td>Complex setup/maintenance</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">41. Explain the working of the X.509 authentication framework.</p>
+<p class="answer">
+    X.509 workflow:
+    <ol>
+        <li><strong>Certificate Issuance</strong>:
+            <ul>
+                <li>User generates key pair</li>
+                <li>Submits CSR to CA</li>
+                <li>CA verifies identity, signs certificate</li>
+            </ul>
+        </li>
+        <li><strong>Validation</strong>:
+            <ul>
+                <li>Recipient checks CA signature</li>
+                <li>Verifies certificate chain</li>
+                <li>Checks revocation lists (CRL/OCSP)</li>
+            </ul>
+        </li>
+    </ol>
+</p>
+
+<p class="question">42. Compare PGP and S/MIME in terms of email security.</p>
+<p class="answer">
+    <div class="comparison">
+        <table>
+            <tr>
+                <th width="25%">Feature</th>
+                <th width="35%">PGP</th>
+                <th>S/MIME</th>
+            </tr>
+            <tr>
+                <td><strong>Standard</strong></td>
+                <td>Open standard (RFC 4880)</td>
+                <td>IETF standard (RFC 8551)</td>
+            </tr>
+            <tr>
+                <td><strong>Key Management</strong></td>
+                <td>Web of trust</td>
+                <td>X.509 PKI hierarchy</td>
+            </tr>
+            <tr>
+                <td><strong>Adoption</strong></td>
+                <td>Common in tech communities</td>
+                <td>Built into enterprise email clients</td>
+            </tr>
+        </table>
+    </div>
+</p>
+
+<p class="question">43. Explain the importance of IPsec in securing internet communication.</p>
+<p class="answer">
+    IPsec provides:
+    <ul>
+        <li><strong>End-to-End Security</strong>:
+            <ul>
+                <li>Encrypts payload (ESP)</li>
+                <li>Authenticates origin (AH)</li>
+            </ul>
+        </li>
+        <li><strong>Flexible Deployment</strong>:
+            <ul>
+                <li>Host-to-host (transport mode)</li>
+                <li>Network-to-network (tunnel mode)</li>
+            </ul>
+        </li>
+        <li><strong>Protocol Support</strong>:
+            <ul>
+                <li>Works for all IP-based traffic</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">44. Describe the role of Encapsulating Security Payload (ESP) in IPsec.</p>
+<p class="answer">
+    ESP provides:
+    <ul>
+        <li><strong>Confidentiality</strong>:
+            <ul>
+                <li>Encrypts packet payload (AES commonly)</li>
+            </ul>
+        </li>
+        <li><strong>Integrity</strong>:
+            <ul>
+                <li>HMAC for tamper detection</li>
+            </ul>
+        </li>
+        <li><strong>Anti-Replay</strong>:
+            <ul>
+                <li>Sequence numbers prevent replay attacks</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="memory-tip">Memory Tip: ESP = Envelope Security Protocol (seals the letter content).</div>
+</p>
+
+<p class="question">45. Explain how SNMP architecture helps in network management security.</p>
+<p class="answer">
+    SNMP security features:
+    <ul>
+        <li><strong>v3 Security</strong>:
+            <ul>
+                <li>Authentication (SHA)</li>
+                <li>Encryption (AES)</li>
+                <li>Access control (VACM)</li>
+            </ul>
+        </li>
+        <li><strong>Management</strong>:
+            <ul>
+                <li>Secure device monitoring</li>
+                <li>Encrypted configuration changes</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">46. Describe the function and importance of configuration management in network security.</p>
+<p class="answer">
+    Configuration management ensures:
+    <ul>
+        <li><strong>Security Baseline</strong>:
+            <ul>
+                <li>Standardized secure configurations</li>
+            </ul>
+        </li>
+        <li><strong>Change Control</strong>:
+            <ul>
+                <li>Approved modifications only</li>
+            </ul>
+        </li>
+        <li><strong>Compliance</strong>:
+            <ul>
+                <li>Meets regulatory requirements</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">47. Explain the differences between host-based and network-based intrusion detection.</p>
+<p class="answer">
+    <div class="comparison">
+        <table>
+            <tr>
+                <th width="25%">Feature</th>
+                <th width="35%">Host-Based (HIDS)</th>
+                <th>Network-Based (NIDS)</th>
+            </tr>
+            <tr>
+                <td><strong>Scope</strong></td>
+                <td>Single host</td>
+                <td>Entire network segment</td>
+            </tr>
+            <tr>
+                <td><strong>Data Sources</strong></td>
+                <td>Logs, file hashes</td>
+                <td>Network packets</td>
+            </tr>
+            <tr>
+                <td><strong>Detection</strong></td>
+                <td>Local attacks</td>
+                <td>Network probes</td>
+            </tr>
+        </table>
+    </div>
+</p>
+
+<p class="question">48. Discuss the advantages of distributed adaptive intrusion detection.</p>
+<p class="answer">
+    Distributed adaptive IDS benefits:
+    <ul>
+        <li><strong>Scalability</strong>:
+            <ul>
+                <li>Handles large networks</li>
+            </ul>
+        </li>
+        <li><strong>Resilience</strong>:
+            <ul>
+                <li>No single point of failure</li>
+            </ul>
+        </li>
+        <li><strong>Context Awareness</strong>:
+            <ul>
+                <li>Correlates events across nodes</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">49. Explain the working of a honeypot and its role in intrusion detection.</p>
+<p class="answer">
+    Honeypot operation:
+    <ol>
+        <li><strong>Deployment</strong>:
+            <ul>
+                <li>Decoy system with vulnerabilities</li>
+            </ul>
+        </li>
+        <li><strong>Attraction</strong>:
+            <ul>
+                <li>Appears as legitimate target</li>
+            </ul>
+        </li>
+        <li><strong>Monitoring</strong>:
+            <ul>
+                <li>Logs all interaction attempts</li>
+            </ul>
+        </li>
+    </ol>
+    <div class="memory-tip">Memory Tip: Honeypot = Security "trap" that lures attackers away from real systems.</div>
+</p>
+
+<p class="question">50. Discuss the role of VPNs in corporate networks.</p>
+<p class="answer">
+    Corporate VPN uses:
+    <ul>
+        <li><strong>Remote Access</strong>:
+            <ul>
+                <li>Secure employee connections</li>
+            </ul>
+        </li>
+        <li><strong>Site-to-Site</strong>:
+            <ul>
+                <li>Connects branch offices</li>
+            </ul>
+        </li>
+        <li><strong>Compliance</strong>:
+            <ul>
+                <li>Meets data protection regulations</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<div class="section">Advanced Application Questions (Q51-90)</div>
+
+<p class="question">51. Explain how digital certificates enhance security in online transactions.</p>
+<p class="answer">
+    Digital certificates provide:
+    <ul>
+        <li><strong>Identity Assurance</strong>:
+            <ul>
+                <li>Verified by Certificate Authorities (CAs)</li>
+                <li>Prevents impersonation attacks</li>
+            </ul>
+        </li>
+        <li><strong>Encryption Foundation</strong>:
+            <ul>
+                <li>Enable SSL/TLS secure channels</li>
+                <li>Facilitate key exchange</li>
+            </ul>
+        </li>
+        <li><strong>Non-Repudiation</strong>:
+            <ul>
+                <li>Legally binding identity verification</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="memory-tip">Memory Tip: Digital certificate = Passport for online identity.</div>
+</p>
+
+<p class="question">52. Analyze the impact of different types of network attacks.</p>
+<p class="answer">
+    <table>
+        <tr>
+            <th width="20%">Attack Type</th>
+            <th width="30%">Impact</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><strong>DDoS</strong></td>
+            <td>Service disruption</td>
+            <td>Downtime costs</td>
+        </tr>
+        <tr>
+            <td><strong>MITM</strong></td>
+            <td>Data theft</td>
+            <td>Credential harvesting</td>
+        </tr>
+        <tr>
+            <td><strong>SQLi</strong></td>
+            <td>Database compromise</td>
+            <td>PII leakage</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">53. Explain how firewalls prevent denial-of-service attacks.</p>
+<p class="answer">
+    Firewall DoS protections:
+    <ul>
+        <li><strong>Rate Limiting</strong>:
+            <ul>
+                <li>Thresholds on connection attempts</li>
+            </ul>
+        </li>
+        <li><strong>SYN Flood Protection</strong>:
+            <ul>
+                <li>SYN cookie mechanisms</li>
+            </ul>
+        </li>
+        <li><strong>Geo-Blocking</strong>:
+            <ul>
+                <li>Filter known malicious IP ranges</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">54. Discuss the significance of cryptographic algorithms in network security.</p>
+<p class="answer">
+    Cryptographic essentials:
+    <ul>
+        <li><strong>Confidentiality</strong>: AES, RSA encryption</li>
+        <li><strong>Integrity</strong>: SHA-256 hashing</li>
+        <li><strong>Authentication</strong>: ECDSA signatures</li>
+        <li><strong>Key Exchange</strong>: DHKE, ECDH</li>
+    </ul>
+    <div class="memory-tip">Memory Tip: Cryptography = Swiss Army knife of security (different tools for different needs).</div>
+</p>
+
+<p class="question">55. Explain how a digital signature provides non-repudiation.</p>
+<p class="answer">
+    Non-repudiation via:
+    <ol>
+        <li><strong>Unique Binding</strong>:
+            <ul>
+                <li>Created with sender's private key</li>
+            </ul>
+        </li>
+        <li><strong>Verifiable Proof</strong>:
+            <ul>
+                <li>Mathematically linked to document hash</li>
+            </ul>
+        </li>
+        <li><strong>Legal Standing</strong>:
+            <ul>
+                <li>Admissible in court under e-signature laws</li>
+            </ul>
+        </li>
+    </ol>
+</p>
+
+<p class="question">56. Describe the role of access control mechanisms in network security.</p>
+<p class="answer">
+    Access control functions:
+    <ul>
+        <li><strong>RBAC</strong> (Role-Based):
+            <ul>
+                <li>Permissions by job function</li>
+            </ul>
+        </li>
+        <li><strong>ABAC</strong> (Attribute-Based):
+            <ul>
+                <li>Context-aware policies</li>
+            </ul>
+        </li>
+        <li><strong>MAC</strong> (Mandatory):
+            <ul>
+                <li>Military-grade classifications</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">57. Discuss how an organization can implement multi-layered security.</p>
+<p class="answer">
+    Defense-in-depth strategy:
+    <ol>
+        <li><strong>Perimeter</strong>: Firewalls, IDS/IPS</li>
+        <li><strong>Network</strong>: Segmentation, VLANs</li>
+        <li><strong>Endpoint</strong>: EDR, host firewalls</li>
+        <li><strong>Data</strong>: Encryption, DLP</li>
+    </ol>
+    <div class="memory-tip">Memory Tip: Like castle defenses - walls, moat, gatehouse, and treasure vault.</div>
+</p>
+
+<p class="question">58. Explain how intrusion detection systems (IDS) are configured to detect threats.</p>
+<p class="answer">
+    IDS configuration process:
+    <ul>
+        <li><strong>Signature Setup</strong>:
+            <ul>
+                <li>Load known attack patterns</li>
+            </ul>
+        </li>
+        <li><strong>Anomaly Baseline</strong>:
+            <ul>
+                <li>Establish normal traffic profiles</li>
+            </ul>
+        </li>
+        <li><strong>Threshold Tuning</strong>:
+            <ul>
+                <li>Balance false positives/negatives</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">59. Discuss the need for an intrusion detection exchange format.</p>
+<p class="answer">
+    IDMEF benefits:
+    <ul>
+        <li><strong>Interoperability</strong>:
+            <ul>
+                <li>Standardized alert sharing</li>
+            </ul>
+        </li>
+        <li><strong>Automation</strong>:
+            <ul>
+                <li>Machine-readable alerts</li>
+            </ul>
+        </li>
+        <li><strong>Correlation</strong>:
+            <ul>
+                <li>Cross-platform threat analysis</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">60. Explain the challenges associated with implementing a secure network.</p>
+<p class="answer">
+    Implementation challenges:
+    <ul>
+        <li><strong>Complexity</strong>:
+            <ul>
+                <li>Balancing security vs usability</li>
+            </ul>
+        </li>
+        <li><strong>Cost</strong>:
+            <ul>
+                <li>Hardware/software investments</li>
+            </ul>
+        </li>
+        <li><strong>Maintenance</strong>:
+            <ul>
+                <li>Continuous patch management</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">61. Evaluate the importance of network security models in modern computing.</p>
+<p class="answer">
+    Model significance:
+    <ul>
+        <li><strong>Risk Management</strong>:
+            <ul>
+                <li>Structured threat assessment</li>
+            </ul>
+        </li>
+        <li><strong>Compliance</strong>:
+            <ul>
+                <li>Meets regulatory requirements</li>
+            </ul>
+        </li>
+        <li><strong>Architecture</strong>:
+            <ul>
+                <li>Guides secure system design</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">62. Compare and contrast various network security threats and suggest countermeasures.</p>
+<p class="answer">
+    <table>
+        <tr>
+            <th width="20%">Threat</th>
+            <th width="30%">Characteristics</th>
+            <th>Countermeasures</th>
+        </tr>
+        <tr>
+            <td><strong>APT</strong></td>
+            <td>Stealthy, persistent</td>
+            <td>Behavioral analytics</td>
+        </tr>
+        <tr>
+            <td><strong>Zero-Day</strong></td>
+            <td>Unknown vulnerabilities</td>
+            <td>Patch management</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">63. Design a secure communication model using SSL/TLS and PKI.</p>
+<p class="answer">
+    Implementation steps:
+    <ol>
+        <li><strong>Certificate Provisioning</strong>:
+            <ul>
+                <li>Obtain X.509 certs from CA</li>
+            </ul>
+        </li>
+        <li><strong>Handshake Configuration</strong>:
+            <ul>
+                <li>Enforce TLS 1.2+</li>
+                <li>Disable weak ciphers</li>
+            </ul>
+        </li>
+        <li><strong>Ongoing Management</strong>:
+            <ul>
+                <li>Certificate revocation checks</li>
+            </ul>
+        </li>
+    </ol>
+</p>
+
+<p class="question">64. Assess the effectiveness of digital signature schemes in ensuring data integrity.</p>
+<p class="answer">
+    Effectiveness analysis:
+    <ul>
+        <li><strong>Strengths</strong>:
+            <ul>
+                <li>Mathematically verifiable</li>
+                <li>Timestamping capabilities</li>
+            </ul>
+        </li>
+        <li><strong>Limitations</strong>:
+            <ul>
+                <li>Dependent on key security</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">65. Develop a firewall strategy for a corporate network.</p>
+<p class="answer">
+    Strategic components:
+    <ul>
+        <li><strong>Zoning</strong>:
+            <ul>
+                <li>DMZ for public services</li>
+            </ul>
+        </li>
+        <li><strong>Layered Defenses</strong>:
+            <ul>
+                <li>Perimeter + internal firewalls</li>
+            </ul>
+        </li>
+        <li><strong>Policy Framework</strong>:
+            <ul>
+                <li>Least privilege rules</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">66. Evaluate the pros and cons of different types of firewalls.</p>
+<p class="answer">
+    <table>
+        <tr>
+            <th width="20%">Type</th>
+            <th width="35%">Pros</th>
+            <th>Cons</th>
+        </tr>
+        <tr>
+            <td><strong>Packet Filter</strong></td>
+            <td>High performance</td>
+            <td>No content inspection</td>
+        </tr>
+        <tr>
+            <td><strong>Application</strong></td>
+            <td>Deep inspection</td>
+            <td>Higher latency</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">67. Discuss the evolution of VPNs and their role in enterprise security.</p>
+<p class="answer">
+    VPN evolution:
+    <ul>
+        <li><strong>Generations</strong>:
+            <ul>
+                <li>PPTP → IPsec → SSL VPN</li>
+            </ul>
+        </li>
+        <li><strong>Enterprise Uses</strong>:
+            <ul>
+                <li>Zero Trust Network Access</li>
+                <li>Cloud connectivity</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">68. Analyze how multi-factor authentication enhances network security.</p>
+<p class="answer">
+    MFA advantages:
+    <ul>
+        <li><strong>Attack Resistance</strong>:
+            <ul>
+                <li>Defeats credential stuffing</li>
+            </ul>
+        </li>
+        <li><strong>Compliance</strong>:
+            <ul>
+                <li>Meets regulatory requirements</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">69. Critically assess the strengths and weaknesses of Kerberos authentication.</p>
+<p class="answer">
+    Kerberos evaluation:
+    <table>
+        <tr>
+            <th width="25%">Strengths</th>
+            <th width="25%">Weaknesses</th>
+        </tr>
+        <tr>
+            <td>No password transmission</td>
+            <td>Single KDC failure point</td>
+        </tr>
+        <tr>
+            <td>Mutual authentication</td>
+            <td>Time synchronization required</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">70. Design a secure email communication strategy using PGP and S/MIME.</p>
+<p class="answer">
+    Hybrid strategy:
+    <ol>
+        <li><strong>Internal</strong>:
+            <ul>
+                <li>S/MIME for enterprise email</li>
+            </ul>
+        </li>
+        <li><strong>External</strong>:
+            <ul>
+                <li>PGP for cross-organization</li>
+            </ul>
+        </li>
+    </ol>
+</p>
+
+<p class="question">71. Evaluate the effectiveness of intrusion detection systems in real-world applications.</p>
+<p class="answer">
+    Effectiveness factors:
+    <ul>
+        <li><strong>Detection Rate</strong>:
+            <ul>
+                <li>True positive percentage</li>
+            </ul>
+        </li>
+        <li><strong>False Alarms</strong>:
+            <ul>
+                <li>Operational overhead</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">72. Design a network security policy for an educational institution.</p>
+<p class="answer">
+    Policy components:
+    <ul>
+        <li><strong>Access Control</strong>:
+            <ul>
+                <li>Role-based student/staff permissions</li>
+            </ul>
+        </li>
+        <li><strong>Content Filtering</strong>:
+            <ul>
+                <li>CIPA compliance for minors</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">73. Assess the challenges in securing an enterprise network.</p>
+<p class="answer">
+    Enterprise challenges:
+    <ul>
+        <li><strong>Scale</strong>:
+            <ul>
+                <li>Thousands of endpoints</li>
+            </ul>
+        </li>
+        <li><strong>Shadow IT</strong>:
+            <ul>
+                <li>Unauthorized cloud services</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">74. Compare and contrast host-based and network-based intrusion detection systems.</p>
+<p class="answer">
+    <table>
+        <tr>
+            <th width="25%">Criteria</th>
+            <th width="35%">HIDS</th>
+            <th>NIDS</th>
+        </tr>
+        <tr>
+            <td><strong>Visibility</strong></td>
+            <td>Host-level events</td>
+            <td>Network traffic</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">75. Develop an intrusion detection strategy for a banking system.</p>
+<p class="answer">
+    Banking IDS approach:
+    <ul>
+        <li><strong>Layered Monitoring</strong>:
+            <ul>
+                <li>Network + host-based</li>
+            </ul>
+        </li>
+        <li><strong>Anomaly Detection</strong>:
+            <ul>
+                <li>Transaction pattern analysis</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">76. Explain how advanced persistent threats (APTs) impact network security.</p>
+<p class="answer">
+    APT characteristics:
+    <ul>
+        <li><strong>Stealth</strong>:
+            <ul>
+                <li>Long-term undetected presence</li>
+            </ul>
+        </li>
+        <li><strong>Sophistication</strong>:
+            <ul>
+                <li>Zero-day exploits</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">77. Analyze the impact of cyber threats on cloud security.</p>
+<p class="answer">
+    Cloud-specific threats:
+    <ul>
+        <li><strong>Misconfiguration</strong>:
+            <ul>
+                <li>Exposed S3 buckets</li>
+            </ul>
+        </li>
+        <li><strong>Shared Responsibility</strong>:
+            <ul>
+                <li>Customer vs provider duties</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">78. Evaluate the effectiveness of honeypots in network security.</p>
+<p class="answer">
+    Honeypot efficacy:
+    <ul>
+        <li><strong>Advantages</strong>:
+            <ul>
+                <li>Early attack warning</li>
+            </ul>
+        </li>
+        <li><strong>Limitations</strong>:
+            <ul>
+                <li>Limited to known attack vectors</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">79. Design a risk management framework for network security.</p>
+<p class="answer">
+    Framework components:
+    <ol>
+        <li><strong>Identification</strong>:
+            <ul>
+                <li>Asset inventory</li>
+            </ul>
+        </li>
+        <li><strong>Assessment</strong>:
+            <ul>
+                <li>Threat modeling</li>
+            </ul>
+        </li>
+    </ol>
+</p>
+
+<p class="question">80. Analyze the role of artificial intelligence in intrusion detection.</p>
+<p class="answer">
+    AI applications:
+    <ul>
+        <li><strong>Behavioral Analysis</strong>:
+            <ul>
+                <li>UEBA systems</li>
+            </ul>
+        </li>
+        <li><strong>Anomaly Detection</strong>:
+            <ul>
+                <li>Machine learning models</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">81. Assess the future of network security in the era of quantum computing.</p>
+<p class="answer">
+    Quantum impacts:
+    <ul>
+        <li><strong>Challenges</strong>:
+            <ul>
+                <li>RSA/ECC vulnerability</li>
+            </ul>
+        </li>
+        <li><strong>Solutions</strong>:
+            <ul>
+                <li>Post-quantum cryptography</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">82. Compare traditional network security measures with zero-trust security models.</p>
+<p class="answer">
+    <table>
+        <tr>
+            <th width="25%">Aspect</th>
+            <th width="35%">Traditional</th>
+            <th>Zero Trust</th>
+        </tr>
+        <tr>
+            <td><strong>Assumption</strong></td>
+            <td>Trust internal traffic</td>
+            <td>Verify all traffic</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">83. Evaluate the security challenges in IoT networks.</p>
+<p class="answer">
+    IoT challenges:
+    <ul>
+        <li><strong>Device Limitations</strong>:
+            <ul>
+                <li>Constrained resources</li>
+            </ul>
+        </li>
+        <li><strong>Patching</strong>:
+            <ul>
+                <li>Long device lifecycles</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">84. Discuss how blockchain technology can enhance network security.</p>
+<p class="answer">
+    Blockchain applications:
+    <ul>
+        <li><strong>Integrity</strong>:
+            <ul>
+                <li>Immutable logs</li>
+            </ul>
+        </li>
+        <li><strong>Decentralization</strong>:
+            <ul>
+                <li>No single point of failure</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">85. Design a secure framework for mobile banking applications.</p>
+<p class="answer">
+    Mobile banking security:
+    <ul>
+        <li><strong>Authentication</strong>:
+            <ul>
+                <li>Biometric + PIN</li>
+            </ul>
+        </li>
+        <li><strong>Data Protection</strong>:
+            <ul>
+                <li>End-to-end encryption</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">86. Develop a network security policy for a healthcare organization.</p>
+<p class="answer">
+    Healthcare policy elements:
+    <ul>
+        <li><strong>HIPAA Compliance</strong>:
+            <ul>
+                <li>PHI protection measures</li>
+            </ul>
+        </li>
+        <li><strong>Access Control</strong>:
+            <ul>
+                <li>Strict role-based access</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">87. Assess the effectiveness of security policies in preventing insider threats.</p>
+<p class="answer">
+    Policy effectiveness:
+    <ul>
+        <li><strong>Prevention</strong>:
+            <ul>
+                <li>Least privilege enforcement</li>
+            </ul>
+        </li>
+        <li><strong>Detection</strong>:
+            <ul>
+                <li>User behavior analytics</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">88. Compare the security risks of wired and wireless networks.</p>
+<p class="answer">
+    <table>
+        <tr>
+            <th width="25%">Risk Factor</th>
+            <th width="35%">Wired</th>
+            <th>Wireless</th>
+        </tr>
+        <tr>
+            <td><strong>Eavesdropping</strong></td>
+            <td>Requires physical access</td>
+            <td>Radio signal interception</td>
+        </tr>
+    </table>
+</p>
+
+<p class="question">89. Analyze the role of ethical hacking in strengthening network security.</p>
+<p class="answer">
+    Ethical hacking benefits:
+    <ul>
+        <li><strong>Vulnerability Discovery</strong>:
+            <ul>
+                <li>Penetration testing</li>
+            </ul>
+        </li>
+        <li><strong>Compliance</strong>:
+            <ul>
+                <li>PCI DSS requirement</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p class="question">90. Propose a framework for ensuring end-to-end security in online transactions.</p>
+<p class="answer">
+    E2E security framework:
+    <ol>
+        <li><strong>Client Side</strong>:
+            <ul>
+                <li>Device integrity checks</li>
+            </ul>
+        </li>
+        <li><strong>Transmission</strong>:
+            <ul>
+                <li>TLS 1.3 encryption</li>
+            </ul>
+        </li>
+        <li><strong>Server Side</strong>:
+            <ul>
+                <li>Tokenized payment processing</li>
+            </ul>
+        </li>
+    </ol>
+</p>
